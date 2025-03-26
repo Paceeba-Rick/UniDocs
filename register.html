@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - UniDocs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container auth-container">
+        <header>
+            <img  style="border-radius: 50px;" src="images/logo.jpg" alt="UniDocs Logo" class="logo">
+            <h1>Create Your UniDocs Account</h1>
+        </header>
+        
+        <form id="registerForm" class="auth-form">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" required placeholder="As it appears on university records">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">University Email</label>
+                <input type="email" id="email" required placeholder="yourname@university.edu">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Create Password</label>
+                <input type="password" id="password" required placeholder="••••••••">
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" required placeholder="••••••••">
+            </div>
+            
+            <div class="form-group">
+                <label for="studentId">Student ID Number</label>
+                <input type="number" id="studentId" required placeholder="e.g. 20230001">
+            </div>
+            
+            <div class="form-group">
+                <label for="department">Department</label>
+                <select id="department" required>
+                    <option value="">Select Department</option>
+                    <option value="computer_science">Computer Science</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="business">Business Administration</option>
+                    <option value="law">Law</option>
+                    <option value="medicine">Medicine</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="graduationYear">Year of addmission </label>
+                <select id="graduationYear">
+                    <option value="">leave this empty if you are a graduate</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="graduationYear"> Year of Graduation</label>
+                <select id="graduationYear">
+                    <option value="">leave this empty if you are an undergraduate</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                </select>
+            </div>
+
+            
+            <div class="form-group">
+                <label for="studentIdUpload">Upload Student ID</label>
+                <div class="file-upload">
+                    <input type="file" id="studentIdUpload" accept="image/*,.pdf" required>
+                    <label for="studentIdUpload">
+                        <img src="images/upload-icon.jpg" alt="Upload">
+                        <span>Choose file</span>
+                    </label>
+                    <div id="fileName">No file chosen</div>
+                </div>
+                <small>Accepted: JPG, PNG, PDF (Max 5MB)</small>
+            </div>
+            
+            <div class="form-group terms">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I agree to the <a href="terms.html">Terms & Conditions</a> and <a href="privacy.html">Privacy Policy</a></label>
+            </div>
+            
+            <button type="submit" class="btn">Create Account</button>
+            
+            <div class="auth-links">
+                <a href="login.html">Already have an account? Login</a>
+            </div>
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

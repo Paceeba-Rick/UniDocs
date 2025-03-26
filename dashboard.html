@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - UniDocs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+    <div class="container dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-left">
+            
+                <img style="border-radius: 50px;" src="images/logo.jpg" alt="UniDocs Logo" class="logo">
+                <h1 style="margin-top: 10%;" >UniDocs</h1>
+                
+            </div>
+            <div class="header-right">
+                <div class="user-profile">
+                    <span>Welcome, Yakubu Paceeba</span>
+                    <img src="images/profile3.jpg" alt="User" class="avatar">
+                </div>
+            </div>
+        </header>
+        
+        <nav class="dashboard-nav">
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="request.html">New Request</a>
+            <a href="profile.html">Profile</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+        
+        <main class="dashboard-main">
+            <div class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="action-buttons">
+                    <a href="request.html" class="action-btn">
+                        <img style="border-radius: 50%;" src="images/new request.jpg" alt="New Request">
+                        <span>New Document Request</span>
+                    </a>
+                    <a href="history.html" class="action-btn">
+                        <img src="images/history-icon.jpg" alt="History">
+                        <span>View Previous Requests</span>
+                    </a>
+                    <a href="profile.html" class="action-btn">
+                        <img style="border-radius: 50%;" src="images/profile3.jpg" alt="Profile">
+                        <span>Update Profile</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="recent-requests">
+                <h2>Recent Requests</h2>
+                <div class="requests-table">
+                    <div class="table-header">
+                        <div>Date</div>
+                        <div>Document</div>
+                        <div>Status</div>
+                        <div>Action</div>
+                    </div>
+                    <div class="table-row">
+                        <div>2025-10-15</div>
+                        <div>Official Transcript</div>
+                        <div class="status ready">Ready</div>
+                        <div><a href="#" class="download-btn">Download</a></div>
+                    </div>
+                    <div class="table-row">
+                        <div>2025-10-10</div>
+                        <div>Diploma Copy</div>
+                        <div class="status processing">Processing</div>
+                        <div><a href="#" class="view-btn">View</a></div>
+                    </div>
+                    <div class="table-row">
+                        <div>2025-09-28</div>
+                        <div>Enrollment Verification</div>
+                        <div class="status completed">Completed</div>
+                        <div><a href="#" class="view-btn">View</a></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="account-status">
+                <h2>Account Status</h2>
+                <div class="status-card verified">
+                    <img src="images/verified-icon.jpg" alt="Verified">
+                    <div>
+                        <h3>Verified Student</h3>
+                        <p>Your account is fully verified with the university</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    </center>
+    <script src="script.js"></script>
+</body>
+</html>

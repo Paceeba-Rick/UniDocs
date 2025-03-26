@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Request - UniDocs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-left">
+                <img style="border-radius: 50%;" src="images/logo.jpg" alt="UniDocs Logo" class="logo">
+                <h1 style="margin-top: 10%;" >UniDocs</h1>
+            </div>
+            <div class="header-right">
+                <div class="user-profile">
+                    <span>Welcome,  Yakubu Paceeba</span>
+                    <img src="images/profile3.jpg" alt="User" class="avatar">
+                </div>
+            </div>
+        </header>
+        
+        <nav class="dashboard-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="request.html" class="active">New Request</a>
+            <a href="profile.html">Profile</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+        
+        <main class="request-main">
+            <h2>New Document Request</h2>
+            
+            <form id="documentRequestForm" class="request-form">
+                <div class="form-section">
+                    <h3>Document Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="documentType">Document Type</label>
+                        <select id="documentType" required>
+                            <option value="">Select Document Type</option>
+                            <option value="transcript">Official Transcript</option>
+                            <option value="diploma">Diploma Copy</option>
+                            <option value="enrollment">Enrollment Verification</option>
+                            <option value="degree">Degree Certification</option>
+                            <option value="other">Other Document</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="otherDocumentGroup" style="display:none;">
+                        <label for="otherDocument">Specify Document</label>
+                        <input type="text" id="otherDocument">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="purpose">Purpose of Request</label>
+                        <select id="purpose" required>
+                            <option value="">Select Purpose</option>
+                            <option value="graduate_school">Graduate School Application</option>
+                            <option value="employment">Employment Verification</option>
+                            <option value="personal">Personal Records</option>
+                            <option value="visa">Visa Application</option>
+                            <option value="other">Other Purpose</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="instructions">Special Instructions</label>
+                        <textarea id="instructions" rows="3" placeholder="Any special requirements for your document"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Delivery Options</h3>
+                    
+                    <div class="form-group">
+                        <label for="deliveryMethod">Delivery Method</label>
+                        <select id="deliveryMethod" required>
+                            <option value="">Select Delivery Method</option>
+                            <option value="digital">Digital Copy </option>
+                            <option value="physical">Physical Mail</option>
+                            <option value="pickup">Campus Pickup</option>
+                        </select>
+                    </div>
+                    
+                    <div id="physicalDeliveryGroup" style="display:none;">
+                        <div class="form-group">
+                            <label for="shippingAddress">Shipping Address</label>
+                            <input type="text" id="shippingAddress" placeholder="Street Address">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city">
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <input type="text" id="state">
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">ZIP Code</label>
+                                <input type="text" id="zip">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country">
+                                <option value="US">United States</option>
+                                <option value="VN">Ghana</option>
+                                <option value="VN">Nigeria</option>
+                                <option value="VN">South Africa</option>
+                                <option value="VN">Canada</option>
+                                <option value="VN">America</option>
+                                <option value="VN">Vietnam</option>
+                                <option value="UK">United Kingdom</option>
+                                <!-- More countries -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Verification</h3>
+                    
+                    <div class="form-group">
+                        <label for="verificationFile">Upload Verification Document</label>
+                        <div class="file-upload">
+                            <input type="file" id="verificationFile" accept="image/*,.pdf" required>
+                            <label for="verificationFile">
+                                <img src="images/upload-icon.jpg" alt="Upload">
+                                <span>Choose file</span>
+                            </label>
+                            <div id="verificationFileName">No file chosen</div>
+                        </div>
+                        <small>Upload your student ID or government ID or any special required file (JPG, PNG, PDF, max 5MB)</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sampleId">Sample Student ID</label>
+                        <img src="images/student-id.png" alt="Sample Student ID" class="sample-id">
+                    </div>
+                </div>
+                
+                <div class="form-section payment-section">
+                    <h3>Payment</h3>
+                    <div class="payment-summary">
+                        <div class="payment-item">
+                            <span>Document Fee</span>
+                            <span>$10.00</span>
+                        </div>
+                        <div class="payment-item">
+                            <span>Shipping Fee</span>
+                            <span id="shippingFee">$0.00</span>
+                        </div>
+                        <div class="payment-total">
+                            <span>Total</span>
+                            <span id="totalAmount">$10.00</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <!--  here -->
+                    <div class="payment-methods">
+                        <h3>Payment Method</h3>
+                        <div class="payment-method" id="creditMethod" data-name="Credit Card">
+                          <img src="images/credit-card.png" alt="Credit Card">
+                          <span>Credit/Debit Card</span>
+                          <div class="radio"></div>
+                        </div>
+                        
+                        <div class="payment-method selected" id="momoMethod" data-name="MoMo">
+                          <img src="images/momo-logo.png" alt="MoMo">
+                          <span>MoMo Wallet</span>
+                          <div class="radio"></div>
+                        </div>
+                        
+                        <div class="payment-method" id="bankMethod" data-name="Bank Transfer">
+                          <img src="images/bank-transfer.png" alt="Bank Transfer">
+                          <span>Bank Transfer</span>
+                          <div class="radio"></div>
+                        </div>
+                      </div>
+
+                          <!-- MoMo Payment Modal -->
+                    <div id="paymentModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-modal">&times;</span>
+                            <h3>Pay with MoMo</h3>
+                            <p>Scan the QR code below using your MoMo app to complete payment</p>
+                            
+                            <img src="images/momo-qr.png" alt="MoMo QR Code" class="momo-qr">
+                            
+                            <div class="payment-summary">
+                                <div class="payment-item">
+                                    <span>Amount to pay:</span>
+                                    <span id="momoAmount">$10.00</span>
+                                </div>
+                            </div>
+                            
+                            <button id="completePaymentBtn" class="btn">I've Completed Payment</button>
+                            <p style="text-align: center; margin-top: 15px; font-size: 14px; color: #666;">
+                                Payment will be processed within 5 minutes
+                            </p>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>    
+    </div>
+    <script src="script.js"></script>
+</body>                      
