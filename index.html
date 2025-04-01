@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniDocs - Manual Document Retrieval</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Landing page specific styles */
+        .hero {
+            background: linear-gradient(135deg, #268df5 0%, #08f169 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+           <section id="logo-name"> <img src="images/logo.jpg" alt="UniDocs Logo" class="logo"><h1 style="margin-top: 7%;">UniDocs</h1></section>
+            <nav>
+                <a href="register.html" class="btn" >Student Portal</a>
+                <a href="admin-login.html" class="btn" >Admin Login</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1>Retrieve School Documents the Easy Way</h1>
+                <p>We retrieve/collect your transcripts, certificates, deploma, testimonials and many more from any educational institution for you</p>
+                <div class="cta-buttons">
+                    <a href="login.html" class="btn">Request Documents</a>
+                    <a href="#how-it-works" class="btn secondary">How It Works</a>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="feature-card">
+                    <img src="images/levels1.jpg" alt="" width="60">
+                    <h3>All Education Levels</h3>
+                    <p>From junior secondary schools to universities - we handle all institutions</p>
+                </div>
+                <div class="feature-card">
+                    <img src="images/tracking.jpg" alt="" width="60">
+                    <h3>Real-Time Tracking</h3>
+                    <p>Follow our team's progress as they retrieve your documents</p>
+                </div>
+                <div class="feature-card">
+                    <img src="images/secure.jpg" alt="" width="60">
+                    <h3>Secure Delivery</h3>
+                    <p>Get documents hand-delivered or as soft-copy</p>
+                </div>
+            </section>
+
+            <section id="how-it-works">
+                <h2>Our document Retrieval Process</h2>
+                <ol class="process-steps">
+                    <li>
+                        <strong>Submit Request</strong>
+                        <p>Tell us what document you need and from which school</p>
+                    </li>
+                    <li>
+                        <strong>We Visit the School</strong>
+                        <p>We contact/visit the institution to collect your documents</p>
+                    </li>
+                    <li>
+                        <strong>Quality Check</strong>
+                        <p>We verify all documents before delivery</p>
+                    </li>
+                    <li>
+                        <strong>Delivery to You</strong>
+                        <p>Choose delivery methode either as soft-copy or hard-copy to your preferred location</p>
+                    </li>
+                </ol>
+            </section>
+        </main>
+
+        <footer>
+           
+            <nav style="background-color: beige;">
+                <a href="terms.html">Privacy Policy</a>
+                <a href="privacy.html">Terms of Service</a>
+                <a href="contact.html">Contact Us</a>
+                <p>© 2025 UniDocs Documents Retrieval Service. All rights reserved.</p>
+            </nav>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - UniDocs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+<body>
+    <div class="admin-container">
+        <header>
+            <section id="logo-name"> <img src="images/logo.jpg" alt="UniDocs Logo" class="logo"><h1 style="margin-top: 7%;">UniDocs</h1></section>
+            <nav>
+                <a href="#" class="active">Requests</a>
+                <a href="#">Teams</a>
+                <a href="#">Reports</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Request List -->
+            <div class="card">
+                <h2><img src="images/pending-log.jpg" alt="" style="width: 10%; height: 10%; border-radius: 50%;"> </h2>
+                <small>Pending Request</small>
+                <div id="requestList"></div>
+        
+            </div>
+
+            <!-- School Map -->
+            <div class="card">
+                <h2><img src="images/map-logo.jpg" alt="" style="width: 15%; height: 15%; border-radius: 50%;"></h2>
+                <small>location of schools</small>
+                <div id="adminMap"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

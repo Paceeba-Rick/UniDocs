@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - UniDocs</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Contact-specific styles */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .contact-info {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-method img {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html"><img src="images/logo.jpg" alt="UniDocs" class="logo"></a>
+            <h1>Contact Our Retrieval Team</h1>
+            <p>Have questions about document retrieval? We're here to help!</p>
+        </header>
+
+        <div class="contact-container">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                
+                <div class="contact-method">
+                    <img src="images/phone-icon.png" alt="Phone">
+                    <div>
+                        <h3>Phone Support</h3>
+                        <p>+233 533 125 955</p>
+                        <small>Monday-Friday, 9am-5pm</small>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <img src="images/whatsapp-icon.png" alt="WhatsApp">
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <p>+233 533 125 955</p>
+                        <small>24/7 support for urgent requests</small>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <img src="images/email-icon.png" alt="Email">
+                    <div>
+                        <h3>Email</h3>
+                        <p>support@unidocs.ng</p>
+                        <small>Response within 24 hours</small>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <img src="images/location-icon.png" alt="Office">
+                    <div>
+                        <h3>Retrieval Offices</h3>
+                        <p>12A Document Lane, Legon<br>Accra, Ghana</p>
+                        <small>By appointment only</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" id="contactName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="contactEmail" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="contactPhone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Request Type</label>
+                        <select id="contactType">
+                            <option value="general">General Inquiry</option>
+                            <option value="retrieval">Document Retrieval Question</option>
+                            <option value="urgent">Urgent Request Assistance</option>
+                            <option value="feedback">Service Feedback</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea id="contactMessage" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Office Hours -->
+        <div class="office-hours">
+            <h2>Retrieval Team Availability</h2>
+            <div class="hours-grid">
+                <div class="day">
+                    <strong>Monday-Friday</strong>
+                    <p>8:00 AM - 5:00 PM</p>
+                </div>
+                
+                <div class="day">
+                    <strong>Sartuday & Sunday</strong>
+                    <p>Closed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="contact.js"></script>
+</body>
+</html>
