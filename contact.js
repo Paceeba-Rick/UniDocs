@@ -23,6 +23,6 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     // Optional: Send to backend
     // fetch('/api/contact', {
     //   method: 'POST',
-    //   body: JSON.stringify(contactData)
+       body: JSON.stringify(contactData)
     // });
 });
