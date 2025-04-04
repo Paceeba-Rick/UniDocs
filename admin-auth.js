@@ -6,7 +6,6 @@
 // DOM Elements
 
 
-
 // Helper function to prevent XSS
 function escapeHtml(unsafe) {
   return unsafe?.toString()
