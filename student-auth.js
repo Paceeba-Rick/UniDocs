@@ -34,7 +34,7 @@ if (registerForm) {
           <input type="text" id="schoolName" required>
         </div>
          <div class="form-group">
-          <label>Idex Number</label>
+          <label>Index Number</label>
           <input type="number" id="index" required>
         </div>
         <div class="form-group">
