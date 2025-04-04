@@ -33,6 +33,10 @@ if (registerForm) {
           <label>School Name</label>
           <input type="text" id="schoolName" required>
         </div>
+         <div class="form-group">
+          <label>Idex Number</label>
+          <input type="number" id="index" required>
+        </div>
         <div class="form-group">
           <label>Graduation Year</label>
           <input type="number" id="graduationYear" min="2000" max="2030">
@@ -66,7 +70,8 @@ if (registerForm) {
         name: document.getElementById('schoolName')?.value || 
               document.getElementById('institutionName')?.value,
         matricNumber: document.getElementById('IDNumber')?.value,
-        graduationYear: document.getElementById('graduationYear')?.value
+        graduationYear: document.getElementById('graduationYear')?.value,
+        studentIndex: document.getElementById('index')?.value
       },
       createdAt: new Date().toISOString()
     };
