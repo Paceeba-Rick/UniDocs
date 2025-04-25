@@ -87,6 +87,24 @@
     </div>
 
     <script>
+         const softCopyRadio = document.getElementById('softCopy');
+    const hardCopyRadio = document.getElementById('hardCopy');
+    const softCopyField = document.getElementById('softCopyField');
+    const hardCopyFields = document.getElementById('hardCopyFields');
+
+    softCopyRadio.addEventListener('change', () => {
+        if (softCopyRadio.checked) {
+            softCopyField.style.display = 'block';
+            hardCopyFields.style.display = 'none';
+        }
+    });
+
+    hardCopyRadio.addEventListener('change', () => {
+        if (hardCopyRadio.checked) {
+            softCopyField.style.display = 'none';
+            hardCopyFields.style.display = 'block';
+        }
+    });
         // Handle "Take Selfie" button click to open file input
         const takeSelfieButton = document.getElementById('takeSelfieButton');
         const selfieUpload = document.getElementById('selfieUpload');
