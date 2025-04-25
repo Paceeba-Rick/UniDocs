@@ -9,17 +9,13 @@
 <body>
     <div class="container">
         <header>
-            <section id="logo-name"> 
-                <img src="images/logo.jpg" alt="UniDocs Logo" class="logo">
-                <h1 style="margin-top: 7%; margin-left: 2%;">UniDocs</h1>
-            </section>
+            <section id="logo-name"> <img src="images/logo.jpg" alt="UniDocs Logo" class="logo"><h1 style="margin-top: 7%; margin-left: 2%;">UniDocs</h1></section>
             <h1>Document Request</h1>
         </header>
 
         <form id="requestForm">
             <!-- Education Level -->
-
-                <div class="form-group">
+            <div class="form-group">
                 <label>Education Level</label>
                 <select id="educationLevel" required>
                     <option value="">Select Level</option>
@@ -28,11 +24,6 @@
                     <option value="university">University/College</option>
                 </select>
             </div>
-
-            <!-- Dynamic School Fields -->
-            <div id="schoolFields"></div>
-            
-    
 
             <!-- Dynamic School Fields -->
             <div id="schoolFields"></div>
@@ -49,45 +40,11 @@
             </div>
 
             <!-- Location Details -->
-                   <div class="form-group">
-    <label>Delivery Method</label>
-    <div>
-        <input type="radio" id="softCopy" name="deliveryMethod" value="soft-copy" required>
-        <label for="softCopy">Soft-copy</label>
-    </div>
-    <div>
-        <input type="radio" id="hardCopy" name="deliveryMethod" value="hard-copy">
-        <label for="hardCopy">Hard-copy</label>
-    </div>
-</div>
-
-<!-- Soft-copy Field -->
-<div class="form-group" id="softCopyField" style="display: none;">
-    <label>Enter Phone Number</label>
-    <input type="tel" id="phoneNumber" placeholder="Phone Number" required>
-</div>
-
-<!-- Hard-copy Fields -->
-<div class="form-group" id="hardCopyFields" style="display: none;">
-    <label>Full Address</label>
-    <input type="text" placeholder="Full Address">
-    <label>Landmark</label>
-    <input type="text" placeholder="Landmark">
-    <label>Contact Phone</label>
-    <input type="tel" placeholder="Contact Phone">
-</div>
-
-            <!-- Upload National ID -->
             <div class="form-group">
-                <label>Upload National ID Card</label>
-                <input type="file" id="nationalIdUpload" accept="image/*" required>
-            </div>
-
-            <!-- Take Selfie -->
-            <div class="form-group">
-                <label>Take a Selfie</label>
-                <button type="button" id="takeSelfieButton" class="btn">Take Selfie</button>
-                <input type="file" id="selfieUpload" accept="image/*" style="display: none;" capture>
+                <label>Where should we deliver?</label>
+                <input type="text" placeholder="Full Address" required>
+                <input type="text" placeholder="Landmark">
+                <input type="tel" placeholder="Contact Phone" required>
             </div>
 
             <!-- Submit Button -->
