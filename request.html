@@ -15,6 +15,26 @@
 
         <form id="requestForm">
             <!-- Education Level -->
+
+                <div class="form-group">
+                <label style="color: #0a7035;"> Select Education Level</label>
+                <div class="level-options">
+                    <div class="level-card"  data-level="junior">
+                        <img src="images/junior-high.jpg" alt="" width="90" height="60%" style="border-radius: 50%;">
+                        <p>Junior High School</p>
+                    </div>
+                    <div class="level-card"  data-level="senior">
+                        <img src="images/senior-high.webp" alt="" width="90" height="60%" style="border-radius: 50%;">
+                        <p>Senior High School</p>
+                    </div>
+                    <div class="level-card"  data-level="university">
+                        <img src="images/university.jpg" alt="" width="90" height="60%" style="border-radius: 50%;">
+                        <p>University/College</p>
+                    </div>
+                </div>
+                <input type="hidden" id="educationLevel" required>
+            </div>
+            
             <div class="form-group">
                 <label>Education Level</label>
                 <select id="educationLevel" required>
