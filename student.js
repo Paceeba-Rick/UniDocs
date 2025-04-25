@@ -13,8 +13,7 @@ document.getElementById('educationLevel').addEventListener('change', function() 
             </div>
             <div class="form-group">
                 <label>Principal's Name</label>
-               
-                
+               <input type="text" required>
             </div>`;
     } else if (level === 'university') {
         html = `
