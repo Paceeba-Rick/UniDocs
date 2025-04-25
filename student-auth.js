@@ -33,10 +33,6 @@ if (registerForm) {
           <label>School Name</label>
           <input type="text" id="schoolName" required>
         </div>
-         <div class="form-group">
-          <label>Index Number</label>
-          <input type="number" id="index" required>
-        </div>
         <div class="form-group">
           <label>Graduation Year</label>
           <input type="number" id="graduationYear" min="2000" max="2030">
@@ -54,6 +50,12 @@ if (registerForm) {
     }
     document.getElementById('schoolFields').innerHTML = html;
   }
+  // Form Submission
+  document.getElementById('requestForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Request submitted! Our team will contact you within 24 hours.');
+  // In production: Save to localStorage/API
+});
 
   // Form Submission
   registerForm.addEventListener('submit', function(e) {
@@ -69,9 +71,8 @@ if (registerForm) {
       schoolInfo: {
         name: document.getElementById('schoolName')?.value || 
               document.getElementById('institutionName')?.value,
-        matricNumber: document.getElementById('IDNumber')?.value,
-        graduationYear: document.getElementById('graduationYear')?.value,
-        studentIndex: document.getElementById('index')?.value
+        IDNumber: document.getElementById('IDNumber')?.value,
+        graduationYear: document.getElementById('graduationYear')?.value
       },
       createdAt: new Date().toISOString()
     };
@@ -148,32 +149,6 @@ function checkStudentAuth() {
     window.location.href = 'login.html';
   }
 }
-
-   const softCopyRadio = document.getElementById('softCopy');
-    const hardCopyRadio = document.getElementById('hardCopy');
-    const softCopyField = document.getElementById('softCopyField');
-    const hardCopyFields = document.getElementById('hardCopyFields');
-
-    softCopyRadio.addEventListener('change', () => {
-        if (softCopyRadio.checked) {
-            softCopyField.style.display = 'block';
-            hardCopyFields.style.display = 'none';
-        }
-    });
-
-    hardCopyRadio.addEventListener('change', () => {
-        if (hardCopyRadio.checked) {
-            softCopyField.style.display = 'none';
-            hardCopyFields.style.display = 'block';
-        }
-    });
-        // Handle "Take Selfie" button click to open file input
-        const takeSelfieButton = document.getElementById('takeSelfieButton');
-        const selfieUpload = document.getElementById('selfieUpload');
-
-        takeSelfieButton.addEventListener('click', () => {
-            selfieUpload.click();
-        });
 
 // Run on every student page
 checkStudentAuth();
