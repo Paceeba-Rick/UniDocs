@@ -18,7 +18,45 @@
 
         <form id="requestForm">
             <!-- Education Level -->
-           <div class="form-group">
+
+                <div class="form-group">
+                <label style="color: #0a7035;"> Select Education Level</label>
+                <div class="level-options">
+                    <div class="level-card"  data-level="junior">
+                        <img src="images/junior-high.jpg" alt="" width="90" height="60%" style="border-radius: 50%;">
+                        <p>Junior High School</p>
+                    </div>
+                    <div class="level-card"  data-level="senior">
+                        <img src="images/senior-high.webp" alt="" width="90" height="60%" style="border-radius: 50%;">
+                        <p>Senior High School</p>
+                    </div>
+                    <div class="level-card"  data-level="university">
+                        <img src="images/university.jpg" alt="" width="90" height="60%" style="border-radius: 50%;">
+                        <p>University/College</p>
+                    </div>
+                </div>
+                <input type="hidden" id="educationLevel" required>
+            </div>
+
+            
+    
+
+            <!-- Dynamic School Fields -->
+            <div id="schoolFields"></div>
+
+            <!-- Document Type -->
+            <div class="form-group">
+                <label>Document Needed</label>
+                <select id="documentType" required>
+                    <option value="">Select Document</option>
+                    <option value="transcript">Transcript</option>
+                    <option value="certificate">Certificate</option>
+                    <input id="otherInput" style="width: 96%;" placeholder="Others">
+                </select>
+            </div>
+
+            <!-- Location Details -->
+                   <div class="form-group">
     <label>Delivery Method</label>
     <div>
         <input type="radio" id="softCopy" name="deliveryMethod" value="soft-copy" required>
@@ -45,28 +83,6 @@
     <label>Contact Phone</label>
     <input type="tel" placeholder="Contact Phone">
 </div>
-
-            <!-- Dynamic School Fields -->
-            <div id="schoolFields"></div>
-
-            <!-- Document Type -->
-            <div class="form-group">
-                <label>Document Needed</label>
-                <select id="documentType" required>
-                    <option value="">Select Document</option>
-                    <option value="transcript">Transcript</option>
-                    <option value="certificate">Certificate</option>
-                    <input id="otherInput" style="width: 96%;" placeholder="Others">
-                </select>
-            </div>
-
-            <!-- Location Details -->
-            <div class="form-group">
-                <label>Where should we deliver?</label>
-                <input type="text" placeholder="Full Address" required>
-                <input type="text" placeholder="Landmark">
-                <input type="tel" placeholder="Contact Phone" required>
-            </div>
 
             <!-- Upload National ID -->
             <div class="form-group">
