@@ -9,12 +9,15 @@
 <body>
     <div class="container">
         <header>
-            <section id="logo-name"> <img src="images/logo.jpg" alt="UniDocs Logo" class="logo"><h1 style="margin-top: 7%; margin-left: 2%;">UniDocs</h1></section>
+            <section id="logo-name"> 
+                <img src="images/logo.jpg" alt="UniDocs Logo" class="logo">
+                <h1 style="margin-top: 7%; margin-left: 2%;">UniDocs</h1>
+            </section>
             <h1>Document Request</h1>
         </header>
 
         <form id="requestForm">
-            <!-- Education Level  -->
+            <!-- Education Level -->
             <div class="form-group">
                 <label>Educational Level</label>
                 <select id="educationLevel" required>
@@ -47,11 +50,32 @@
                 <input type="tel" placeholder="Contact Phone" required>
             </div>
 
+            <!-- Upload National ID -->
+            <div class="form-group">
+                <label>Upload National ID Card</label>
+                <input type="file" id="nationalIdUpload" accept="image/*" required>
+            </div>
+
+            <!-- Take Selfie -->
+            <div class="form-group">
+                <label>Take a Selfie</label>
+                <button type="button" id="takeSelfieButton" class="btn">Take Selfie</button>
+                <input type="file" id="selfieUpload" accept="image/*" style="display: none;" capture>
+            </div>
+
             <!-- Submit Button -->
             <button type="submit" class="btn">Submit Request</button>
         </form>
     </div>
 
-    <script src="student.js"></script>
+    <script>
+        // Handle "Take Selfie" button click to open file input
+        const takeSelfieButton = document.getElementById('takeSelfieButton');
+        const selfieUpload = document.getElementById('selfieUpload');
+
+        takeSelfieButton.addEventListener('click', () => {
+            selfieUpload.click();
+        });
+    </script>
 </body>
 </html>
