@@ -150,5 +150,14 @@ function checkStudentAuth() {
   }
 }
 
+// Add this code in student-auth.js
+const educationLevelDropdown = document.getElementById('educationLevel');
+
+if (educationLevelDropdown) {
+  educationLevelDropdown.addEventListener('change', function () {
+    updateSchoolFields(this.value);
+  });
+}
+
 // Run on every student page
 checkStudentAuth();
