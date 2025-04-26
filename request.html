@@ -7,22 +7,52 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+   <div class="container">
         <header>
-            <section id="logo-name"> <img src="images/logo.jpg" alt="UniDocs Logo" class="logo"><h1 style="margin-top: 7%; margin-left: 2%;">UniDocs</h1></section>
+            <section id="logo-name"> 
+                <img src="images/logo.jpg" alt="UniDocs Logo" class="logo">
+                <h1 style="margin-top: 7%; margin-left: 2%;">UniDocs</h1>
+            </section>
             <h1>Document Request</h1>
         </header>
 
         <form id="requestForm">
+            <!-- User Information -->
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="fullName" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password" required>
+            </div>
+
             <!-- Education Level -->
             <div class="form-group">
                 <label>Education Level</label>
-                <select id="educationLevel" required>
-                    <option value="">Select Level</option>
-                    <option value="junior">Junior High</option>
-                    <option value="senior">Senior High</option>
-                    <option value="university">University/College</option>
-                </select>
+                <div class="level-options">
+                    <div class="level-card" data-level="junior">
+                        Junior High
+                    </div>
+                    <div class="level-card" data-level="senior">
+                        Senior High
+                    </div>
+                    <div class="level-card" data-level="university">
+                        University/College
+                    </div>
+                </div>
+                <input type="hidden" id="educationLevel" required>
             </div>
 
             <!-- Dynamic School Fields -->
@@ -35,17 +65,100 @@
                     <option value="">Select Document</option>
                     <option value="transcript">Transcript</option>
                     <option value="certificate">Certificate</option>
-                    <input id="otherInput" style="width: 96%;" placeholder="Others">
                 </select>
+                <input type="text" id="otherDocument" placeholder="Others (please specify)" style="display: none; width: 96%; margin-top: 5px;">
             </div>
 
-            <!-- Location Details -->
+            <!-- Copy Type -->
             <div class="form-group">
-                <label>Where should we deliver?</label>
-                <input type="text" placeholder="Full Address" required>
-                <input type="text" placeholder="Landmark">
-                <input type="tel" placeholder="Contact Phone" required>
+                <label>Copy Type</label>
+                <div class="copy-options">
+                    <div class="copy-option">
+                        <input type="radio" id="softCopy" name="copyType" value="soft" checked>
+                        <label for="softCopy">Soft Copy</label>
+                    </div>
+                    <div class="copy-option">
+                        <input type="radio" id="hardCopy" name="copyType" value="hard">
+                        <label for="hardCopy">Hard Copy</label>
+                    </div>
+                </div>
+                <div id="softCopyFields">
+                    <label>WhatsApp Number to Receive Document</label>
+                    <input type="tel" id="whatsappNumber" placeholder="Enter WhatsApp number" required>
+                </div>
+                <div id="hardCopyFields" class="hidden">
+                    <label>Where should we deliver?</label>
+                    <input type="text" id="deliveryAddress" placeholder="Your Location">
+                    <input type="text" id="landmark" placeholder="Landmark">
+                    <input type="tel" id="deliveryPhone" placeholder="Contact Phone">
+                </div>
             </div>
+
+            <!-- ID Verification -->
+            <div class="form-group">
+                <label>ID Verification</label>
+                <div class="upload-area" id="idUploadArea">
+                    <p>Upload ID Card (Student ID/National ID)</p>
+                    <input type="file" id="idUpload" accept="image/*" style="display: none;">
+                    <img id="idPreview" style="display: none;">
+                </div>
+            </div>
+
+            <!-- Selfie Verification -->
+            <div class="form-group">
+                <label>Take a Selfie</label>
+                <div class="upload-area" id="startCameraBtn">
+                    <p>Click to take a live selfie</p>
+                    <img id="selfiePreview" style="display: none;">
+                </div>
+                <div id="cameraContainer">
+                    <video id="video" autoplay playsinline></video>
+                    <canvas id="canvas"></canvas>
+                    <div class="camera-buttons">
+                        <button type="button" id="captureBtn" class="camera-btn">Capture</button>
+                        <button type="button" id="retakeBtn" class="camera-btn">Retake</button>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Payment Method Section -->
+        <div class="form-group">
+            <label>Payment Method</label>
+            <div class="payment-methods">
+                <div class="payment-option" data-method="momo">
+                    <input type="radio" id="momoPayment" name="paymentMethod" value="momo" checked>
+                    <label for="momoPayment">MTN Mobile Money (MoMo)</label>
+                </div>
+                <div class="payment-option" data-method="bank">
+                    <input type="radio" id="bankPayment" name="paymentMethod" value="bank">
+                    <label for="bankPayment">Bank Transfer</label>
+                </div>
+                
+                <!-- MTN MoMo Payment Details -->
+                <div id="momoDetails" class="payment-details active">
+                    <label for="momoNumber">MTN Mobile Money Number</label>
+                    <input type="tel" id="momoNumber" placeholder="Enter your MTN number" required>
+                    
+                    <label for="momoName">Account Holder Name</label>
+                    <input type="text" id="momoName" placeholder="Name as registered with MTN" required>
+                </div>
+                
+                <!-- Bank Transfer Details -->
+                <div id="bankDetails" class="payment-details">
+                    <label for="bankName">Bank Name</label>
+                    <input type="text" id="bankName" placeholder="Enter bank name">
+                    
+                    <label for="accountNumber">Account Number</label>
+                    <input type="text" id="accountNumber" placeholder="Enter account number">
+                    
+                    <label for="accountName">Account Holder Name</label>
+                    <input type="text" id="accountName" placeholder="Enter account holder name">
+                    
+                    <label for="branch">Branch (Optional)</label>
+                    <input type="text" id="branch" placeholder="Enter branch name">
+                </div>
+            </div>
+        </div>
 
             <!-- Submit Button -->
             <button type="submit" class="btn">Submit Request</button>
